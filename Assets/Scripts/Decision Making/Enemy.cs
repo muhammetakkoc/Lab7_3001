@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour
     GameObject sniperPrefab;
 
     Timer shootCooldown = new Timer();
-    Timer weaponSwitchTimer = new Timer(5.0f); // 5 seconds for weapon switch
+    Timer weaponSwitchTimer = new Timer(5.0f); 
 
     const float cooldownSniper = 0.75f;
     const float cooldownShotgun = 0.25f;
@@ -109,7 +109,7 @@ public class Enemy : MonoBehaviour
         statePrev = stateCurr;
         Debug.DrawLine(transform.position, transform.position + transform.right * viewDistance, color);
 
-        // Weapon switch logic if the enemy has both weapons
+        
         if (weaponType == WeaponType.SHOTGUN | weaponType == WeaponType.SNIPER)
         {
             weaponSwitchTimer.Tick(Time.deltaTime);
@@ -125,7 +125,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.CompareTag("Bullet"))
         {
-            // TODO -- damage enemy if it gets hit with a *Player* bullet
+            
         }
 
         if (collision.CompareTag("Shotgun"))
@@ -246,8 +246,7 @@ public class Enemy : MonoBehaviour
 
     void SpawnWeapons()
     {
-        // Randomly spawn shotguns and snipers on the ground
-        // Assuming you have some method of determining the ground positions
+        
         Vector3 shotgunPosition = new Vector3(Random.Range(-8.3f, 8.3f), Random.Range(-4.5f, 4.5f), 0);
         Instantiate(shotgunPrefab, shotgunPosition, Quaternion.identity);
 

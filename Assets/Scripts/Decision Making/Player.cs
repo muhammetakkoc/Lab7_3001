@@ -128,12 +128,11 @@ public class Player : MonoBehaviour
 
     void SpawnWeapons()
     {
-        // Randomly spawn shotguns and snipers on the ground
-        // Assuming you have some method of determining the ground positions
-        Vector3 shotgunPosition = new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), 0);
+
+        Vector3 shotgunPosition = new Vector3(Random.Range(-8.3f, 8.3f), Random.Range(-4.5f, 4.5f), 0);
         Instantiate(shotgunPrefab, shotgunPosition, Quaternion.identity);
 
-        Vector3 sniperPosition = new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), 0);
+        Vector3 sniperPosition = new Vector3(Random.Range(-8.3f, 8.3f), Random.Range(-4.5f, 4.5f), 0);
         Instantiate(sniperPrefab, sniperPosition, Quaternion.identity);
     }
 
